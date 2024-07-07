@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.39486b67.css",
+    "main.js": "/static/js/main.d9b8eb37.js",
+    "static/media/jpg": "/static/media/5e442f61e3089761605fe7b2d602997e.98c5cb9b15c2c05ac814.jpg",
+    "static/media/market.jpg": "/static/media/market.4300194889995ce3aeb1.jpg",
+    "static/media/biz.jpg": "/static/media/biz.fb2aa2ffc6b40a942e46.jpg",
+    "static/media/png": "/static/media/4f48d1b3f074ff499871d0a5fc488b83.b8ae9e1aa0b277359120.png",
+    "static/media/clint-profile.jpg": "/static/media/clint-profile.7ac0bd901fae1d53ebd2.jpg",
+    "static/media/ad.jpg": "/static/media/ad.90735995b366099d978b.jpg",
+    "static/media/graphic.jpg": "/static/media/graphic.5024c44a4c1f2add2dd4.jpg",
+    "static/media/digital.jpg": "/static/media/digital.13687f106d33c058448f.jpg",
+    "static/media/webdev.jpg": "/static/media/webdev.9104440c7ad75356ba08.jpg",
+    "static/media/4957136.jpg": "/static/media/4957136.1e4196abf5971dfd59cc.jpg",
+    "static/media/auth.png": "/static/media/auth.20d5979b439e1531640d.png",
+    "static/media/NftBanner1.png": "/static/media/NftBanner1.87062366f75bedd52bd2.png",
+    "static/media/avatar2.png": "/static/media/avatar2.5692c39db4f8c0ea999e.png",
+    "static/media/avatar3.png": "/static/media/avatar3.9f646ac5920fa40adf00.png",
+    "static/media/avatar1.png": "/static/media/avatar1.eeef2af6dfcd3ff23cb8.png",
+    "static/media/logo.png": "/static/media/logo.e00127e2ee32729e1819.png",
+    "static/media/logoWhite.png": "/static/media/logoWhite.04abb29906b761e1cc31.png",
+    "static/media/Navbar.png": "/static/media/Navbar.f96a9f58c491b9acda99.png",
+    "static/media/avatar4.png": "/static/media/avatar4.54d5c1de851c273b2cd9.png",
+    "static/media/logo-of-BIZOWL--Business-Services-Logo.png": "/static/media/logo-of-BIZOWL--Business-Services-Logo.18d4af2263ae3223eb22.png",
+    "static/media/Ellipse 658.png": "/static/media/Ellipse 658.bc544617ec16ef9bc21d.png",
+    "static/media/icons8-google.svg": "/static/media/icons8-google.9a7800d06783d80a1c12249a8ca58e9d.svg",
+    "index.html": "/index.html",
+    "static/media/icons8-microsoft.svg": "/static/media/icons8-microsoft.c7da0d2a72a26a1a9a3fc4182bb3feda.svg",
+    "main.39486b67.css.map": "/static/css/main.39486b67.css.map",
+    "main.d9b8eb37.js.map": "/static/js/main.d9b8eb37.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39486b67.css",
+    "static/js/main.d9b8eb37.js"
+  ]
+}
