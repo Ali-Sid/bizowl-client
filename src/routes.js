@@ -30,6 +30,7 @@ import Recommendation from "views/admin/recommendation";
 import Message from "views/admin/message";
 import SignIn from "views/auth/signIn";
 import Login from "components/Auth/Login";
+import Logout from "components/Auth/utils/login/Logout";
 
 const routes = [
   {
@@ -131,7 +132,7 @@ const routes = [
         // color='white'
       />
     ),
-    component: Login,
+    component: Logout,
     secondary: true,
   },
   

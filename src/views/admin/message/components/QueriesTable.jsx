@@ -46,7 +46,7 @@ const QueriesTable = () => {
                                     backgroundColor="#EBF2FA"
                                     boxShadow="0rem 0.25rem 0.25rem 0rem #00000025"
                                 >
-                                    <Td>
+                                    {/* <Td>
                                         <Flex direction="column">
                                             <Text fontWeight="bold">{item?.category}</Text>
                                             <Text fontSize="sm">{item?.subCategory}</Text>
@@ -67,7 +67,7 @@ const QueriesTable = () => {
                                     <Td fontWeight="bold">{item?.deliveryStatus}</Td>
                                     <Td cursor="pointer" onClick={() => { setQueryStatus(!queryStatus) }}>
                                         <Text color="#407BFF">Open</Text>
-                                    </Td>
+                                    </Td> */}
                                 </Tr>
                             ))}
 
@@ -94,7 +94,7 @@ const QueriesTable = () => {
                                     backgroundColor="#EBF2FA"
                                     boxShadow="0rem 0.25rem 0.25rem 0rem #00000025"
                                 >
-                                    <Td>
+                                    {/* <Td>
                                         <Flex direction="column">
                                             <Text fontWeight="bold">{filterItem?.category}</Text>
                                             <Text fontSize="sm">{filterItem?.subCategory}</Text>
@@ -116,7 +116,7 @@ const QueriesTable = () => {
                                     <Td fontWeight="bold">{filterItem?.leadStatus}</Td>
                                     <Td cursor="pointer" onClick={() => { setQueryStatus(!queryStatus) }}>
                                         <Text color="#407BFF">Open</Text>
-                                    </Td>
+                                    </Td> */}
                                 </Tr>
                             ))}
                         </Tbody>

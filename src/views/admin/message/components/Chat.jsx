@@ -36,7 +36,7 @@ const Chat = () => {
                 {chatData.map((item, index) => {
                     return (
                         <Box key={index}>
-                            <Flex p="1rem">
+                            {/* <Flex p="1rem">
                                 <Avatar src={ProfilePic} alt="Profile Pic" />
                                 <Flex
                                     ml="1rem"
@@ -46,12 +46,12 @@ const Chat = () => {
                                     <Text fontSize="sm">{item?.message}</Text>
                                 </Flex>
                             </Flex>
-                            <HSeparator />
+                            <HSeparator /> */}
                         </Box>
                     )
                 })}
             </Box>
-            <Box
+            {/* <Box
                 ml="1rem"
                 width="38%"
             >
@@ -173,7 +173,7 @@ const Chat = () => {
                         </AccordionPanel>
                     </AccordionItem>
                 </Accordion>
-            </Box>
+            </Box> */}
         </Flex>
     )
 }

@@ -99,29 +99,29 @@ const Project = () => {
           <CustomCard key={index} card={item} />
         ))}
       </Flex>
-      {/* <Flex position="relative">
+      <Flex position="relative">
         <Tabs>
           <TabList>
             <Tab>Ongoing Projects</Tab>
             <Tab>Completed Projects</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel>
+            {/* <TabPanel>
               <Flex mt="2rem" flexWrap="wrap" justifyContent="space-between">
                 {displayedProjects.map((item, index) => (
                   <ProjectCard key={index} props={item} />
                 ))}
               </Flex>
-            </TabPanel>
+            </TabPanel> */}
             <TabPanel>
-              <Flex mt="2rem" flexWrap="wrap" justifyContent="space-between">
+              {/* <Flex mt="2rem" flexWrap="wrap" justifyContent="space-between">
                 {displayedProjects.map((item, index) => (
                   <ProjectCard key={index} props={item} />
                 ))}
-              </Flex>
+              </Flex> */}
             </TabPanel>
           </TabPanels>
-          <Flex
+          {/* <Flex
             justifyContent="space-around"
             alignItems="center"
             marginBottom="2rem"
@@ -143,7 +143,7 @@ const Project = () => {
             >
               Next
             </Button>
-          </Flex>
+          </Flex> */}
         </Tabs>
 
         <Flex
@@ -160,12 +160,12 @@ const Project = () => {
           />
           <Text mr="0.6rem">Past 15 days</Text>
           <ChevronDownIcon mr="0.6rem" />
-          <Text mr="0.6rem">17 Jan 2024</Text>
+          <Text mr="0.6rem">17 Jul 2024</Text>
           <Text>
-            <span style={{ marginRight: "0.6rem" }}>to</span> 08 Feb 2024
+            <span style={{ marginRight: "0.6rem" }}>to</span> 08 Aug 2024
           </Text>
         </Flex>
-      </Flex> */}
+      </Flex>
       {/* <EnquiryTable columnData={enquiryColumnData} rowData={enquiryRowData} /> */}
       
       {/* <Box mt="3rem">
