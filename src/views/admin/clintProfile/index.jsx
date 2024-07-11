@@ -8,7 +8,7 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import Image from "views/admin/clintProfile/assets/avatar1.png";
 import Personal from "./components/personal";
 import BusinessInfo from "./components/businessInfo";
@@ -18,10 +18,65 @@ import Goals from "./components/goal";
 import useUserDisplayName from "components/hooks/useUserDisplayName";
 import { db } from "config/firebase";
 import { auth } from "config/firebase";
+import { getDownloadURL, uploadBytes } from "firebase/storage";
+import { doc, updateDoc } from "firebase/firestore";
+import { ref } from "firebase/database";
 
 const Profile = () => {
-  const { displayName, isLoading } = useUserDisplayName(db, auth);
-  if (isLoading) return <div>Loading...</div>;
+  const { displayName } = useUserDisplayName(db, auth);
+  const profilePicInputRef = useRef(null);
+  const [profilePicture, setProfilePicture] = useState(Image);
+  const [isLoading, setIsLoading] = useState(true);
+  const [userId, setUserId] = useState("");
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    getUserProfile();
+  }, []);
+
+  // if (isLoading) return <div>Loading...</div>;
+
+  const handleSelectFile = async (event) => {
+    setIsLoading(true);
+    if (event.target.files && event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const fileName = file.name;
+      const storageRef = ref(storage, `profilePicture/${fileName}`);
+      try {
+        await uploadBytes(storageRef, file);
+        const downloadUrl = await getDownloadURL(storageRef);
+        const profileRef = doc(db, "users", userId);
+        await updateDoc(profileRef, { profile: downloadUrl });
+        setProfilePicture(downloadUrl);
+      } catch (error) {
+        console.error("Upload error:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+  };
+
+  const getUserProfile = async () => {
+    try {
+      const userUid = sessionStorage.getItem("uid");
+      const queryForGetUser = query(
+        collection(db, "users"),
+        where("uid", "==", userUid)
+      );
+      const querySnapshot = await getDocs(queryForGetUser);
+      if (!querySnapshot.empty) {
+        const userData = querySnapshot.docs[0]?.data();
+        const userId = querySnapshot.docs[0]?.id;
+        setUserData(userData);
+        setUserId(userId);
+        setProfilePicture(userData?.profile);
+      }
+    } catch (error) {
+      console.error("Error getting partner profile:", error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="d-flex flex-row mb-3">
