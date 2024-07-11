@@ -73,7 +73,7 @@ const Dashboard = () => {
           <CustomCard key={index} card={item} />
         ))}
       </Flex>
-      {/* <Flex mt="3rem" justifyContent="space-between">
+      <Flex mt="3rem" justifyContent="space-between">
         <Box
           backgroundColor="#FFFFFF"
           width="55%"
@@ -100,14 +100,14 @@ const Dashboard = () => {
                 {chatData.map((item, index) => {
                   return (
                     <Box key={index}>
-                      <Flex p="1.5rem">
+                      {/* <Flex p="1.5rem">
                         <Avatar src={ProfilePic} alt="Profile Pic" />
                         <Flex ml="1rem" flexDirection="column">
                           <Text fontWeight="bold">{item?.clientName}</Text>
                           <Text fontSize="sm">{item?.message}</Text>
                         </Flex>
                       </Flex>
-                      <HSeparator />
+                      <HSeparator /> */}
                     </Box>
                   );
                 })}
@@ -116,14 +116,14 @@ const Dashboard = () => {
                 {DashboardData.map((item, index) => {
                   return (
                     <Box key={index}>
-                      <Flex p="1.5rem">
+                      {/* <Flex p="1.5rem">
                         <Avatar src={ProfilePic} alt="Profile Pic" />
                         <Flex ml="1rem" flexDirection="column">
                           <Text fontWeight="bold">{item?.clientName}</Text>
                           <Text fontSize="sm">{item?.message}</Text>
                         </Flex>
                       </Flex>
-                      <HSeparator />
+                      <HSeparator /> */}
                     </Box>
                   );
                 })}
@@ -183,7 +183,7 @@ const Dashboard = () => {
                   return(
 
                     <Box key={index}  backgroundColor="#F7FCFB"borderRadius="20px"  marginBottom="10px" border="none" >
-                      <Flex p="1rem" boxShadow="-3px 0px 1px 0px #407BFF" borderRadius="20px" >
+                      {/* <Flex p="1rem" boxShadow="-3px 0px 1px 0px #407BFF" borderRadius="20px" >
                         <Avatar src={ProfilePic} alt="Profile Pic" />
                         <Flex ml="1rem" flexDirection="column">
                           <Text fontWeight="bold">{item?.clientName}</Text>
@@ -193,7 +193,7 @@ const Dashboard = () => {
                         <Flex alignItems="center">
                         <Text fontSize="sm">{item?.time}</Text>
                         </Flex>
-                      </Flex>
+                      </Flex> */}
                     
                     </Box>
                   )
@@ -206,7 +206,7 @@ const Dashboard = () => {
                   return(
 
                     <Box key={index}  backgroundColor="#F7FCFB"borderRadius="20px"  marginBottom="10px" border="none" >
-                      <Flex p="1rem" boxShadow="-3px 0px 1px 0px #407BFF" borderRadius="20px" >
+                      {/* <Flex p="1rem" boxShadow="-3px 0px 1px 0px #407BFF" borderRadius="20px" >
                         <Avatar src={ProfilePic} alt="Profile Pic" />
                         <Flex ml="1rem" flexDirection="column">
                           <Text fontWeight="bold">{item?.clientName}</Text>
@@ -216,7 +216,7 @@ const Dashboard = () => {
                         <Flex alignItems="center">
                         <Text fontSize="sm">{item?.time}</Text>
                         </Flex>
-                      </Flex>
+                      </Flex> */}
                     
                     </Box>
                   )
@@ -231,7 +231,7 @@ const Dashboard = () => {
        
        
     
-      </Flex> */}
+      </Flex>
       <Flex mt="2rem" flexWrap="wrap" justifyContent="space-between">
         <ServiceCard />
       </Flex>

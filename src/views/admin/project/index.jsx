@@ -106,13 +106,13 @@ const Project = () => {
             <Tab>Completed Projects</Tab>
           </TabList>
           <TabPanels>
-            {/* <TabPanel>
-              <Flex mt="2rem" flexWrap="wrap" justifyContent="space-between">
-                {displayedProjects.map((item, index) => (
+            <TabPanel>
+              <Flex mt="1rem" flexWrap="wrap" justifyContent="space-between">
+                {/* {displayedProjects.map((item, index) => (
                   <ProjectCard key={index} props={item} />
-                ))}
+                ))} */}
               </Flex>
-            </TabPanel> */}
+            </TabPanel>
             <TabPanel>
               {/* <Flex mt="2rem" flexWrap="wrap" justifyContent="space-between">
                 {displayedProjects.map((item, index) => (
@@ -166,14 +166,14 @@ const Project = () => {
           </Text>
         </Flex>
       </Flex>
-      {/* <EnquiryTable columnData={enquiryColumnData} rowData={enquiryRowData} /> */}
+      <EnquiryTable columnData={enquiryColumnData} rowData={enquiryRowData} />
       
-      {/* <Box mt="3rem">
+      <Box mt="3rem">
         <PaymentHistoryTable
           columnData={paymentHistoryColumnData}
           rowData={paymentHistoryRowData}
         />
-      </Box> */}
+      </Box>
     </>
   );
 };

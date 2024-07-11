@@ -158,7 +158,7 @@ const EnquiryTable = ({ columnData, rowData }) => {
               </Tr>
             </Thead>
             <Tbody>
-              {displayData.map((item, index) => (
+              {/* {displayData.map((item, index) => (
                 <Tr
                   key={index}
                   backgroundColor="#EBF2FA"
@@ -181,7 +181,7 @@ const EnquiryTable = ({ columnData, rowData }) => {
                   <Td fontWeight="bold">{item?.timeLine}</Td>
                   <Td color={getColorStatus(item?.status)}>{item?.status}</Td>
                 </Tr>
-              ))}
+              ))} */}
             </Tbody>
           </Table>
         </TableContainer>

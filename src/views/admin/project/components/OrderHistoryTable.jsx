@@ -72,7 +72,7 @@ const PaymentHistoryTable = ({ columnData, rowData }) => {
             </Tr>
           </Thead>
           <Tbody overflowX="auto" style={{ height: "200px" }}>
-            {displayData.map((item, index) => (
+            {/* {displayData.map((item, index) => (
               <Tr key={index}>
                 <Td>
                   <Flex justifyContent="center" alignItems="center">
@@ -110,10 +110,10 @@ const PaymentHistoryTable = ({ columnData, rowData }) => {
                   {item?.payment}
                 </Td>
               </Tr>
-            ))}
+            ))} */}
           </Tbody>
           <Tfoot>
-            <Tr backgroundColor="#D0E3F3">
+            {/* <Tr backgroundColor="#D0E3F3">
               <Th fontSize="1rem">Total</Th>
               <Th></Th>
               <Th></Th>
@@ -142,7 +142,7 @@ const PaymentHistoryTable = ({ columnData, rowData }) => {
                 )}
               </Th>
               <Th></Th>
-            </Tr>
+            </Tr> */}
           </Tfoot>
         </Table>
         <Flex justifyContent="space-between" alignItems="center" m="1rem 2rem">

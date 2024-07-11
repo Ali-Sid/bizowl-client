@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.39486b67.css",
-    "main.js": "/static/js/main.5857aa82.js",
+    "main.js": "/static/js/main.1b643c8e.js",
     "static/media/jpg": "/static/media/5e442f61e3089761605fe7b2d602997e.98c5cb9b15c2c05ac814.jpg",
     "static/media/market.jpg": "/static/media/market.4300194889995ce3aeb1.jpg",
     "static/media/biz.jpg": "/static/media/biz.fb2aa2ffc6b40a942e46.jpg",
@@ -27,10 +27,10 @@
     "index.html": "/index.html",
     "static/media/icons8-microsoft.svg": "/static/media/icons8-microsoft.c7da0d2a72a26a1a9a3fc4182bb3feda.svg",
     "main.39486b67.css.map": "/static/css/main.39486b67.css.map",
-    "main.5857aa82.js.map": "/static/js/main.5857aa82.js.map"
+    "main.1b643c8e.js.map": "/static/js/main.1b643c8e.js.map"
   },
   "entrypoints": [
     "static/css/main.39486b67.css",
-    "static/js/main.5857aa82.js"
+    "static/js/main.1b643c8e.js"
   ]
 }

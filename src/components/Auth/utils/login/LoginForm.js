@@ -92,7 +92,7 @@ const LoginForm = () => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log("User signed in:", user);
-      history.push("/partner/home");
+      history.push("/client/home");
       // Handle successful sign-in (e.g., navigate to a different page)
     } catch (error) {
       console.error("Error signing in with Google:", error);
