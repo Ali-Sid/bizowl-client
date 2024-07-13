@@ -6,8 +6,6 @@ import QueriesTable from './components/QueriesTable'
 const Message = () => {
   return (
     <>
-     <Chat />
-     
       <Tabs
         position="relative"
         variant='unstyled'
@@ -34,6 +32,7 @@ const Message = () => {
       <Flex>
 
       </Flex>
+      <Chat />
     </>
   )
 }

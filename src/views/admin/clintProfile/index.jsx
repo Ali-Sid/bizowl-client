@@ -8,7 +8,7 @@ import {
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "views/admin/clintProfile/assets/avatar1.png";
 import Personal from "./components/personal";
 import BusinessInfo from "./components/businessInfo";
@@ -19,71 +19,76 @@ import useUserDisplayName from "components/hooks/useUserDisplayName";
 import { db } from "config/firebase";
 import { auth } from "config/firebase";
 import { getDownloadURL, uploadBytes } from "firebase/storage";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { ref } from "firebase/database";
+import { storage } from "config/firebase";
 
 const Profile = () => {
-  const { displayName } = useUserDisplayName(db, auth);
-  const profilePicInputRef = useRef(null);
-  const [profilePicture, setProfilePicture] = useState(Image);
-  const [isLoading, setIsLoading] = useState(true);
-  const [userId, setUserId] = useState("");
+  const { displayName, uid } = useUserDisplayName(db, auth);
+  const [profilePicture, setProfilePicture] = useState("");
+  const [userId, setUserId] = useState(uid);
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
-    getUserProfile();
-  }, []);
-
-  // if (isLoading) return <div>Loading...</div>;
-
-  const handleSelectFile = async (event) => {
-    setIsLoading(true);
-    if (event.target.files && event.target.files.length > 0) {
-      const file = event.target.files[0];
-      const fileName = file.name;
-      const storageRef = ref(storage, `profilePicture/${fileName}`);
-      try {
-        await uploadBytes(storageRef, file);
-        const downloadUrl = await getDownloadURL(storageRef);
-        const profileRef = doc(db, "users", userId);
-        await updateDoc(profileRef, { profile: downloadUrl });
-        setProfilePicture(downloadUrl);
-      } catch (error) {
-        console.error("Upload error:", error);
-      } finally {
-        setIsLoading(false);
+    const fetchUserData = async () => {
+      if (userId) {
+        const userDoc = await getDoc(doc(db, "users", userId));
+        if (userDoc.exists()) {
+          setUserData(userDoc.data());
+          setProfilePicture(userDoc.data().profilePicture || "");
+        }
       }
+    };
+
+    fetchUserData();
+  }, [userId]);
+
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (!file) {
+      return;
     }
+
+    const storageRef = ref(storage, `profilePictures/${file.name}`);
+    await uploadBytes(storageRef, file);
+
+    // Get the download URL for the uploaded file
+    const downloadUrl = await getDownloadURL(storageRef);
+    setProfilePicture(downloadUrl);
+
+    // Update the user's profile picture in Firestore
+    const userRef = doc(db, "users", userId);
+    await updateDoc(userRef, { profilePicture: downloadUrl });
+
+    // Optionally, clear the input field after successful upload
+    event.target.value = "";
   };
 
-  const getUserProfile = async () => {
-    try {
-      const userUid = sessionStorage.getItem("uid");
-      const queryForGetUser = query(
-        collection(db, "users"),
-        where("uid", "==", userUid)
-      );
-      const querySnapshot = await getDocs(queryForGetUser);
-      if (!querySnapshot.empty) {
-        const userData = querySnapshot.docs[0]?.data();
-        const userId = querySnapshot.docs[0]?.id;
-        setUserData(userData);
-        setUserId(userId);
-        setProfilePicture(userData?.profile);
-      }
-    } catch (error) {
-      console.error("Error getting partner profile:", error.message);
-    } finally {
-      setIsLoading(false);
-    }
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserData({
+      ...userData,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const userRef = doc(db, "users", userId);
+    await updateDoc(userRef, userData);
   };
 
   return (
     <div className="d-flex flex-row mb-3">
       <Flex>
         <Flex flexDirection="column">
-          <Avatar size="2xl" name={displayName} />
-          <input type="file" id="actual-btn" hidden />
+          <Avatar size="2xl" name={displayName} src={profilePicture} />
+          <input
+            type="file"
+            id="actual-btn"
+            hidden
+            onChange={handleFileChange}
+          />
           <label
             for="actual-btn"
             style={{
